@@ -31,13 +31,13 @@ Website itself and related code is subject to major changes. Don't expect this r
 After all, we're artists more than machines :)
 
 
-## Contact
+## Contact
 
 Twitter @idenary_com https://twitter.com/idenary_com
 Discord https://discord.gg/GAbu57d
 
 
-## Donation addresses
+## Donation addresses
 
 A tip, be it large or small, always is appreciated!
 
