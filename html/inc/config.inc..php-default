@@ -1,0 +1,28 @@
+<?php 
+
+// Edit and rename to config.inc.php
+
+global $CONFIG;
+
+
+$CONFIG=array("callback_url" => "https://idenary.com/draw.php",
+              "nonce_endpoint" => "https://idenary.com/nonce.php",
+              "authentication_endpoint" => "https://idenary.com/auth.php",
+              "favicon_url" => "https://idenary.com/favicon.ico",
+              "secret_salt" => "YOUR_SALT",
+              "timeout" => 60*60,
+              "tokens_dir" => "/var/www/idenary.com/html/cache/tokens/",
+              "cache_dir" => "/var/www/idenary.com/html/cache/",
+              "logout_url" => "https://idenary.com/");
+
+$CONFIG['sql_server'] = '127.0.0.1';
+$CONFIG['sql_database'] = 'DB';
+$CONFIG['sql_username'] = 'USER';
+$CONFIG['sql_password'] = 'PASS';
+
+// Do not edit below 
+
+global $DB;
+
+$DB = new PDO('mysql:dbname=' . $CONFIG['sql_database'] . ';host=' . $CONFIG['sql_server'] . ';charset=utf8', $CONFIG['sql_username'], $CONFIG['sql_password']);
+$DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
