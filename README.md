@@ -4,6 +4,8 @@
 https://Idenary.com is a fresh game and art project built upon Idena.  
 We compete for the "sign in with Idena" contest. Feel free to start and watch this repo to show your support!
 
+Idena official website is to be found at https://idena.io/
+
 ## Benefits for Idena
 
 We hope our little experiment will show that an identity centric solution like Idena is not limited to serious issues like voting and governance.  
