@@ -33,8 +33,8 @@ After all, we're artists more than machines :)
 
 ## Contact
 
-Twitter @idenary_com https://twitter.com/idenary_com
-Discord https://discord.gg/GAbu57d
+- Twitter @idenary_com https://twitter.com/idenary_com  
+- Discord https://discord.gg/GAbu57d
 
 
 ## Donation addresses
