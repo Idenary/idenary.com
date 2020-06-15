@@ -1,0 +1,8 @@
+{
+    "require": {
+        "monolog/monolog": "1.0.*",
+        "web3p/rlp": "^0.3.2",
+        "web3p/ethereum-util": "^0.1.2",
+        "cboden/ratchet": "^0.4.2"
+    }
+}

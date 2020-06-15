@@ -32,6 +32,140 @@ We can be of help if you have precise questions.
 Website itself and related code is subject to major changes. Don't expect this repo nor the website to be in a stable state at any point in time.  
 After all, we're artists more than machines :)
 
+See composer.json for required modules.
+
+### cache
+
+cache directory needs the proper permissions. session tokens are stored there.
+
+### config
+
+rename `inc/config.inc.php-default` to `inc/config.inc.php` and edit.
+
+### websocket server
+
+Directory wsserver, ratchet based websocket server. Run with php server.php (this one does not run under apache)
+
+### sql database
+
+Needs a mysql database, see config for access info.
+
+Mysql structure is the following:
+
+```
+
+--
+-- Table structure for table `address_bundle`
+--
+
+CREATE TABLE `address_bundle` (
+  `address` varchar(100) NOT NULL,
+  `bundle_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bundles`
+--
+
+CREATE TABLE `bundles` (
+  `id` int(11) NOT NULL,
+  `type` tinyint(4) NOT NULL,
+  `data` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bundle_details`
+--
+
+CREATE TABLE `bundle_details` (
+  `bundle_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `credits`
+--
+
+CREATE TABLE `credits` (
+  `status` varchar(20) NOT NULL,
+  `credits` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `squares`
+--
+
+CREATE TABLE `squares` (
+  `id` int(11) NOT NULL,
+  `address` varchar(100) NOT NULL DEFAULT '',
+  `item` varchar(100) NOT NULL DEFAULT '',
+  `rotate` tinyint(4) NOT NULL DEFAULT '0',
+  `color` varchar(6) NOT NULL DEFAULT '000',
+  `bgcolor` varchar(6) NOT NULL DEFAULT 'FFFFFF',
+  `started` bigint(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+
+--
+-- Indexes for table `address_bundle`
+--
+ALTER TABLE `address_bundle`
+  ADD PRIMARY KEY (`address`,`bundle_id`);
+
+--
+-- Indexes for table `bundles`
+--
+ALTER TABLE `bundles`
+  ADD PRIMARY KEY (`id`,`type`,`data`) USING BTREE;
+
+--
+-- Indexes for table `bundle_details`
+--
+ALTER TABLE `bundle_details`
+  ADD PRIMARY KEY (`bundle_id`);
+
+--
+-- Indexes for table `credits`
+--
+ALTER TABLE `credits`
+  ADD PRIMARY KEY (`status`);
+
+--
+-- Indexes for table `squares`
+--
+ALTER TABLE `squares`
+  ADD PRIMARY KEY (`id`);
+```
+
+"Credits" table holds the number of credits for every Idena Identity state:
+
+```
+--
+-- Dumping data for table `credits`
+--
+
+INSERT INTO `credits` (`status`, `credits`) VALUES
+('', 0),
+('Candidate', 0),
+('Human', 27),
+('Newbie', 7),
+('Suspended', 9),
+('Verified', 18),
+('Zombie', 9);
+```
 
 ## Contact
 
@@ -48,5 +182,5 @@ ETH `0x12bf3bfbA5D34c36D6F48aafB64c26F30e59d02A`
 
 ## Open source
 
-This project is released under a very permissive GPL 2-clause licence.  
+This project source code is released under a very permissive GPL 2-clause licence.  
 Please do not abuse it and keep the credits!

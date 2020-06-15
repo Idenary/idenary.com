@@ -1,9 +1,5 @@
 *.zip
 *.bak
 *.old
-*.json
 *.old.php
-cache
-cache/*
-svgs
 config.inc.php
